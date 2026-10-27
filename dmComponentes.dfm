@@ -239,6 +239,13 @@ object DM: TDM
   end
   object qrBIBLIA_LIVROS: TFDQuery
     Connection = ADO
+    FormatOptions.AssignedValues = [fvMapRules]
+    FormatOptions.OwnMapRules = True
+    FormatOptions.MapRules = <
+      item
+        SourceDataType = dtWideMemo
+        TargetDataType = dtWideString
+      end>
     SQL.Strings = (
       'SELECT * FROM LIVRO ORDER BY ID')
     Left = 712
